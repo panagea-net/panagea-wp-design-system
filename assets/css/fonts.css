@@ -1,0 +1,38 @@
+/* 1. Define the Regular Weight */
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap; /* Important for performance (LCP) */
+    /* Note the path: We are in /css/, so we go up one level (../) to /fonts/ */
+    src: url('../fonts/Jost-Regular.ttf') format('trueType');
+}
+
+/* 2. Define the Bold Weight */
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/Jost-Bold.ttf') format('trueType');
+}
+
+/* 3. Force the Application (Global Overrides) */
+:root {
+    /* Blocksy uses these variables for the Base and Heading fonts.
+       By redefining them here, we override the Customizer settings.
+    */
+    --ct-font-family-base: 'Jost', sans-serif !important;
+    --ct-font-family-headings: 'Jost', sans-serif !important;
+
+    /* Stackable might have its own overrides, so we force them too 
+       if they don't inherit automatically.
+    */
+    --stk-font-family-base: 'Jost', sans-serif !important;
+    --stk-font-family-heading: 'Jost', sans-serif !important;
+}
+
+/* Fallback: Force standard elements just in case */
+body, h1, h2, h3, h4, h5, h6, button, input, textarea {
+    font-family: 'Jost', sans-serif !important;
+}
