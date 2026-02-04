@@ -35,7 +35,10 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.9.1",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-theme/twentytwentyfive": "^1.0",
+    "wpackagist-theme/blocksy": "*",
+    "wpackagist-plugin/blocksy-companion": "*",
+    "wpackagist-plugin/stackable-ultimate-gutenberg-blocks": "*"
   },
   "require-dev": {
     "laravel/pint": "^1.18",

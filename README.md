@@ -8,15 +8,21 @@ In order to setup local environment for development:
 1. run `scripts/setup-salt.sh` from the root folder to generate salts values
 1. run command to install core wordpress:
     ```
-        wp core install \
-        --url="http://localhost:8080" \
-        --title="Panagea WP Design System" \
-        --admin_user="admin" \
-        --admin_password="admin" \
-        --admin_email="you@example.com" \
-        --skip-email
+    wp core install \
+    --url="http://localhost:8080" \
+    --title="Panagea WP Design System" \
+    --admin_user="admin" \
+    --admin_password="admin" \
+    --admin_email="you@example.com" \
+    --skip-email
     ```
     (use `composer run wp -- core ...` if not installed globally )
+1. ensure blocksy theme is active:
+    ```
+    composer wp theme activate blocksy
+    composer wp plugin activate blocksy-companion
+    ```
+1. ensure stackable plugin is also active: `composer wp plugin activate stackable-ultimate-gutenberg-blocks`
 1. use `php -S 127.0.0.1:8080 -t web` from root folder to start th site
 
 ### Requirements on MacOsX
@@ -44,3 +50,6 @@ mysql> exit
 $> mysql -u localuser -p
 mysql> SHOW DATABASES;
 ```
+
+## ToDo
+- [ ] lock down the design so content editors on the final sites can change the text of the patterns but cannot break the layout
