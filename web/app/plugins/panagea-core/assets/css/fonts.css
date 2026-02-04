@@ -33,6 +33,6 @@
 }
 
 /* Fallback: Force standard elements just in case */
-body, h1, h2, h3, h4, h5, h6, button, input, textarea {
+body, h1, h2, h3, h4, h5, h6, a, p, li, ul, div, span, section, button, input, textarea {
     font-family: 'Jost', sans-serif !important;
 }
