@@ -14,7 +14,13 @@ use Roots\WPConfig\Config;
 use function Env\env;
 
 // USE_ENV_ARRAY + CONVERT_* + STRIP_QUOTES
-Env\Env::$options = 31;
+// Env\Env::$options = 31;
+// Prefer getenv() (LOCAL_FIRST) with type conversions and stripped quotes
+Env\Env::$options = Env\Env::CONVERT_BOOL
+    | Env\Env::CONVERT_NULL
+    | Env\Env::CONVERT_INT
+    | Env\Env::STRIP_QUOTES
+    | Env\Env::LOCAL_FIRST;
 
 /**
  * Directory containing all of the site's files
@@ -50,7 +56,7 @@ if (file_exists($root_dir . '/.env')) {
 
     $dotenv->required(['WP_HOME', 'WP_SITEURL']);
     if (!env('DATABASE_URL')) {
-        $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
+        $dotenv->required(['DB_NAME', 'DB_USERNAME', 'DB_PASSWORD']);
     }
 }
 
@@ -88,7 +94,8 @@ if (env('DB_SSL')) {
 }
 
 Config::define('DB_NAME', env('DB_NAME'));
-Config::define('DB_USER', env('DB_USER'));
+// Config::define('DB_USER', env('DB_USER'));
+Config::define('DB_USER', env('DB_USERNAME'));
 Config::define('DB_PASSWORD', env('DB_PASSWORD'));
 Config::define('DB_HOST', env('DB_HOST') ?: 'localhost');
 Config::define('DB_CHARSET', 'utf8mb4');

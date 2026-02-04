@@ -1,27 +1,22 @@
 {
-  "name": "roots/bedrock",
+  "name": "panagea-net/panagea-wp-design-system",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
+  "description": "Panagea design system implemented as wordpress plugin and theme, based on Bedrock boilerplate by Roots.",
+  "homepage": "https://github.com/panagea-net/panagea-wp-design-system",
   "authors": [
     {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
+      "name": "Fabio Sanvido",
+      "email": "nando.sanvido@gmail.com",
+      "homepage": "https://github.com/NandoSan"
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "panagea", "composer", "wordpress", "wp", "wp-config", "design system"
   ],
   "support": {
-    "issues": "https://github.com/roots/bedrock/issues",
-    "forum": "https://discourse.roots.io/category/bedrock"
+    "issues": "https://github.com/panagea-net/panagea-wp-design-system/issues",
+    "forum": "https://github.com/panagea-net/panagea-wp-design-system/issues"
   },
   "repositories": [
     {
@@ -43,7 +38,8 @@
     "wpackagist-theme/twentytwentyfive": "^1.0"
   },
   "require-dev": {
-    "laravel/pint": "^1.18"
+    "laravel/pint": "^1.18",
+    "wp-cli/wp-cli-bundle": "^2.12"
   },
   "config": {
     "optimize-autoloader": true,
@@ -65,6 +61,7 @@
   },
   "scripts": {
     "lint": "pint --test",
-    "lint:fix": "pint"
+    "lint:fix": "pint",
+    "wp": "wp"
   }
 }
