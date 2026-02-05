@@ -19,4 +19,7 @@ define( 'PANAGEA_CORE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/typography.php';
 require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/styles.php';
 require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/patterns.php';
+require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/reusable-blocks.php';
 // require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/woocommerce-tweaks.php'; // Future expansion
+
+register_activation_hook( __FILE__, 'panagea_seed_reusable_blocks' );
