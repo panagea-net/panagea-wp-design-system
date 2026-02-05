@@ -89,31 +89,9 @@ See a comparision with other approaches in [Pattern](#the-patterns-approach) and
 
 1) Bump the `version` for the changed block in `includes/reusable-blocks.php` (e.g., `1.0.1` → `1.0.2`).
 1) Run the seeder: `composer wp eval 'panagea_seed_reusable_blocks();'`
-1) Verify: `composer wp db query "SELECT ID, post_title, post_name, post_status, post_date FROM wp_posts WHERE post_type='wp_block';"`
-1) If a block looks outdated, delete its `wp_block`: 
-    ```
-    composer wp db query "
-        START TRANSACTION;
-        -- remove meta for this block
-        DELETE pm
-        FROM wp_postmeta pm
-        JOIN wp_posts p ON pm.post_id = p.ID
-        WHERE p.post_type = 'wp_block'
-        AND p.post_name = 'panagea-pillars-en';
-        -- remove revisions for this block
-        DELETE r
-        FROM wp_posts r
-        JOIN wp_posts p ON r.post_parent = p.ID
-        WHERE p.post_type = 'wp_block'
-        AND p.post_name = 'panagea-pillars-en'
-        AND r.post_type = 'revision';
-        -- remove the block itself
-        DELETE FROM wp_posts
-        WHERE post_type = 'wp_block'
-        AND post_name = 'panagea-pillars-en';
-        COMMIT;
-        "
-    ```
+1) Verify: `./utils/scripts/pattern_utils.sh list`
+1) If a block looks outdated, delete its `wp_block` with: `./utils/scripts/pattern_utils.sh reset panagea-pillars-en`
+    
     Afterward, rerun your seeder to recreate just that block if needed.
 
 ### The Patterns approach
