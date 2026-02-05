@@ -18,5 +18,5 @@ define( 'PANAGEA_CORE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 // Load Modules
 require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/typography.php';
 require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/styles.php';
-// require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/patterns.php'; // Future expansion
+require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/patterns.php';
 // require_once PANAGEA_CORE_PLUGIN_PATH . 'includes/woocommerce-tweaks.php'; // Future expansion
