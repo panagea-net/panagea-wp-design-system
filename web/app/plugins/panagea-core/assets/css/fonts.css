@@ -4,17 +4,42 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap; /* Important for performance (LCP) */
-    /* Note the path: We are in /css/, so we go up one level (../) to /fonts/ */
-    src: url('../fonts/Jost-Regular.ttf') format('trueType');
+    src:
+        url('../fonts/Jost-Regular.woff2') format('woff2'),
+        url('../fonts/Jost-Regular.ttf') format('truetype');
 }
 
-/* 2. Define the Bold Weight */
+/* 2. Define the Medium Weight */
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        url('../fonts/Jost-Medium.woff2') format('woff2'),
+        url('../fonts/Jost-Medium.ttf') format('truetype');
+}
+
+/* 3. Define the Bold Weight */
 @font-face {
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../fonts/Jost-Bold.ttf') format('trueType');
+    src:
+        url('../fonts/Jost-Bold.woff2') format('woff2'),
+        url('../fonts/Jost-Bold.ttf') format('truetype');
+}
+
+/* 4. Define the Black Weight */
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src:
+        url('../fonts/Jost-Black.woff2') format('woff2'),
+        url('../fonts/Jost-Black.ttf') format('truetype');
 }
 
 /* 3. Force the Application (Global Overrides) */

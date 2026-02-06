@@ -24,6 +24,7 @@ In order to setup local environment for development:
     ```
 1. ensure stackable plugin is also active: `composer wp plugin activate stackable-ultimate-gutenberg-blocks`
 1. ensure panagea plugin is active: `composer wp plugin activate panagea-core`
+1. sync editor preview `composer wp panagea-core apply-defaults -- --force-blocksy`
 1. use `php -S 127.0.0.1:8080 -t web` from root folder to start th site
 
 ### Requirements on MacOsX
@@ -51,6 +52,25 @@ mysql> exit
 $> mysql -u localuser -p
 mysql> SHOW DATABASES;
 ```
+## Panagea CLI commands
+All commands are run via composer WP-CLI from the repo root.
+
+- `composer wp panagea-core apply-defaults`
+  - Injects `assets/css/global-overrides.css` into the active theme’s **Additional CSS**.
+  - Removes any previous Panagea marker block (`/* Panagea Core Defaults START/END */`) before appending the fresh one.
+- `composer wp panagea-core apply-defaults -- --force-blocksy`
+  - Same as above, plus overwrites Blocksy theme_mods (palette, buttons, typography) with Panagea defaults.
+- `composer wp panagea-core blocksy-defaults`
+  - Seeds Blocksy theme_mods only where empty (non-destructive).
+- `composer wp panagea-core blocksy-defaults -- --force`
+  - Overwrites Blocksy theme_mods with Panagea defaults without touching Additional CSS.
+- `composer wp panagea-core clear-additional-css`
+  - Removes the Panagea marker-wrapped block from Additional CSS, leaving other custom CSS untouched.
+
+When to use:
+- After theme activation/switch.
+- After updating Panagea styling tokens.
+- To realign a site that drifted from the baseline.
 
 ## Components implementations
 ### Reusable, localized blocks (Synced Pattern)
