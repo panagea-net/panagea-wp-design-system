@@ -1,0 +1,385 @@
+/* Panagea / Blocksy baseline tokens */
+:root {
+    /* Colors */
+    --pan-color-primary: #A3C79F;
+    --pan-color-primary-hover: #49715A;
+    --pan-color-secondary: #93827F;
+    --pan-color-secondary-hover: #7C6C69;
+    --pan-color-success: #E64D32; /* also CTA */
+    --pan-color-warning: #E7B23A;
+    --pan-color-danger: #C13A32;
+    --pan-color-neutral: #2E3243;
+
+    /* Map to common Blocksy CSS vars so native components pick them up */
+    --paletteColor1: var(--pan-color-primary);
+    --paletteColor2: var(--pan-color-secondary);
+    --paletteColor3: #ffffff;
+    --paletteColor4: #f5f7f8;
+    --accentColor: var(--pan-color-primary);
+    --linkInitialColor: var(--pan-color-primary);
+    --linkHoverColor: var(--pan-color-primary-hover);
+    --linkVisitedColor: #8c9e86;
+    --theme-link-color: var(--pan-color-primary);
+    --theme-link-hover-color: var(--pan-color-primary-hover);
+    --theme-link-active-color: var(--pan-color-primary-hover);
+    --theme-button-background-initial-color: var(--pan-color-primary-hover);
+    --theme-button-background-hover-color: var(--pan-color-primary-hover);
+
+    /* Button variables used by Blocksy buttons */
+    --buttonTextInitialColor: #fff;
+    --buttonTextHoverColor: #fff;
+    --buttonTextActiveColor: #fff;
+    --buttonBackgroundInitialColor: var(--pan-color-primary);
+    --buttonBackgroundHoverColor: var(--pan-color-primary-hover);
+    --buttonBackgroundActiveColor: var(--pan-color-primary-hover);
+    --buttonBorderInitialColor: transparent;
+    --buttonBorderHoverColor: transparent;
+    --buttonBorderActiveColor: transparent;
+
+    /* Radii */
+    --pan-radius-button: 10rem;
+    --pan-radius-card: 1rem;
+    --pan-radius-input: 0.75rem;
+
+    /* Typography sizing */
+    --pan-body-font-size: 16px;
+    --pan-body-line-height: 1.6;
+
+    /* Layout */
+    --pan-container-max-width: 1536px;
+    --pan-content-max-width: 1040px;
+
+    /* Spacing scale (base 4px) */
+    --pan-space-1: 4px;
+    --pan-space-2: 8px;
+    --pan-space-3: 12px;
+    --pan-space-4: 16px;
+    --pan-space-5: 24px;
+    --pan-space-6: 32px;
+    --pan-space-7: 48px;
+    --pan-space-8: 64px;
+    --pan-space-9: 80px;
+    --pan-space-10: 96px;
+
+    /* Section paddings (airy) */
+    --pan-hero-padding-y: var(--pan-space-10); /* 96px */
+    --pan-hero-padding-x: var(--pan-space-7);  /* 48px */
+    --pan-section-padding-y: var(--pan-space-9); /* 80px */
+    --pan-section-padding-x: var(--pan-space-6); /* 32px */
+    --pan-grid-gutter: var(--pan-space-5);      /* 24px */
+
+    /* Elevations */
+    --pan-shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+    --pan-shadow-strong: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+    /* Map to common Blocksy CSS vars so native components pick them up */
+    --paletteColor1: var(--pan-color-primary);
+    --paletteColor2: var(--pan-color-secondary);
+    --paletteColor3: #ffffff;
+    --paletteColor4: #f5f7f8;
+    --accentColor: var(--pan-color-primary);
+    --linkInitialColor: var(--pan-color-primary);
+    --linkHoverColor: var(--pan-color-primary-hover);
+    --linkVisitedColor: #8c9e86;
+
+    /* Button variables used by Blocksy buttons */
+    --buttonTextInitialColor: #fff;
+    --buttonTextHoverColor: #fff;
+    --buttonTextActiveColor: #fff;
+    --buttonBackgroundInitialColor: var(--pan-color-primary);
+    --buttonBackgroundHoverColor: var(--pan-color-primary-hover);
+    --buttonBackgroundActiveColor: var(--pan-color-primary-hover);
+    --buttonBorderInitialColor: transparent;
+    --buttonBorderHoverColor: transparent;
+    --buttonBorderActiveColor: transparent;
+}
+
+html {
+    font-size: var(--pan-body-font-size);
+}
+
+body {
+    line-height: var(--pan-body-line-height);
+}
+
+/* Headings scale */
+h1 { font-size: 3rem;   line-height: 1.1;  font-weight: 700; }
+h2 { font-size: 2.375rem; line-height: 1.15; font-weight: 700; }
+h3 { font-size: 1.875rem; line-height: 1.2;  font-weight: 600; }
+h4 { font-size: 1.5rem;  line-height: 1.3;  font-weight: 600; }
+h5 { font-size: 1.25rem; line-height: 1.35; font-weight: 500; }
+h6 { font-size: 1rem;   line-height: 1.4;  font-weight: 500; }
+
+/* Links */
+a {
+    color: var(--pan-color-primary);
+    text-decoration: none;
+    transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+a:hover {
+    color: var(--pan-color-primary-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: currentColor;
+}
+
+a:visited {
+    color: #8c9e86; /* slightly darker than primary */
+}
+
+/* Navigation links */
+nav a {
+    color: var(--pan-color-primary-hover);
+}
+
+nav a:hover {
+    color: var(--pan-color-primary);
+}
+
+/* Blocksy menu links */
+
+/* Layout widths */
+.ct-container {
+    max-width: var(--pan-container-max-width);
+}
+
+.entry-content,
+.singular .ct-container .entry-content,
+.single .ct-container .entry-content,
+.page .ct-container .entry-content {
+    max-width: var(--pan-content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Airy section defaults on top-level content blocks */
+.entry-content > .wp-block-group,
+.entry-content > .wp-block-cover,
+.entry-content > .wp-block-media-text,
+.entry-content > .ct-section {
+    padding-top: var(--pan-section-padding-y);
+    padding-bottom: var(--pan-section-padding-y);
+    padding-left: var(--pan-section-padding-x);
+    padding-right: var(--pan-section-padding-x);
+    box-sizing: border-box;
+}
+
+/* Hero variant helper (add class .pan-hero to a top-level block) */
+.entry-content > .pan-hero {
+    padding-top: var(--pan-hero-padding-y);
+    padding-bottom: var(--pan-hero-padding-y);
+    padding-left: var(--pan-hero-padding-x);
+    padding-right: var(--pan-hero-padding-x);
+}
+
+/* Grid gutters */
+.wp-block-columns {
+    gap: var(--pan-grid-gutter);
+}
+
+/* Buttons */
+button,
+input[type="button"],
+input[type="submit"],
+.wp-block-button__link,
+.ct-button {
+    border-radius: var(--pan-radius-button);
+    padding: 0.875rem 1.375rem;
+    font-weight: 500;
+    border: none;
+    background-color: var(--pan-color-primary);
+    color: #fff;
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.wp-block-button__link:hover,
+.ct-button:hover {
+    background-color: var(--pan-color-primary-hover);
+    color: #fff;
+}
+
+/* Inputs & textareas */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+    border-radius: var(--pan-radius-input);
+    background-color: #fff;
+    border: 1px solid rgba(46, 50, 67, 0.2); /* neutral at ~20% */
+    color: var(--pan-color-neutral);
+    padding: 0.75rem 1rem;
+    transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(46, 50, 67, 0.6);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--pan-color-primary);
+    box-shadow: 0 0 0 3px rgba(163, 199, 159, 0.2); /* primary @ 20% */
+}
+
+/* Lists */
+ul,
+ol {
+    padding-left: 1.2em;
+    margin: var(--pan-space-4) 0;
+    line-height: 1.6;
+}
+
+ul li {
+    list-style: disc;
+    padding-left: var(--pan-space-2);
+}
+
+ol li {
+    list-style: decimal;
+    padding-left: var(--pan-space-2);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--pan-space-5) 0;
+    font-size: 0.95rem;
+}
+
+th,
+td {
+    padding: var(--pan-space-3) var(--pan-space-4);
+    border-bottom: 1px solid rgba(46, 50, 67, 0.12);
+}
+
+th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--pan-color-neutral);
+}
+
+tr:hover td {
+    background: rgba(163, 199, 159, 0.05);
+}
+
+/* Code blocks */
+code,
+pre {
+    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    background: #f5f7f8;
+    border: 1px solid rgba(46, 50, 67, 0.1);
+    border-radius: 0.5rem;
+    color: var(--pan-color-neutral);
+}
+
+code {
+    padding: 0.15em 0.35em;
+    font-size: 0.95em;
+}
+
+pre {
+    padding: var(--pan-space-4);
+    overflow: auto;
+    line-height: 1.5;
+}
+
+/* Cards and common containers */
+.card,
+.ct-card,
+.wp-block-group,
+.wp-block-cover,
+.wp-block-columns,
+.wp-block-column {
+    border-radius: var(--pan-radius-card);
+    box-shadow: var(--pan-shadow-soft);
+}
+
+/* Outline / ghost buttons */
+.wp-block-button.is-style-outline .wp-block-button__link,
+.wp-block-button__link.is-style-outline,
+.ct-button.ct-outline,
+.ct-button.is-outline {
+    background-color: transparent;
+    color: var(--pan-color-primary);
+    border: 2px solid var(--pan-color-primary);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button__link.is-style-outline:hover,
+.ct-button.ct-outline:hover,
+.ct-button.is-outline:hover {
+    background-color: var(--pan-color-primary);
+    color: #fff;
+    border-color: var(--pan-color-primary-hover);
+}
+
+/* Blog cards */
+.ct-post-card,
+.ct-related-posts .ct-card,
+.ct-grid-posts .ct-card {
+    border-radius: var(--pan-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pan-shadow-soft);
+}
+
+/* Elevation hover variants */
+.card:hover,
+.ct-card:hover,
+.wp-block-group:hover,
+.wp-block-cover:hover,
+.wp-block-columns:hover,
+.wp-block-column:hover,
+.ct-post-card:hover,
+.ct-related-posts .ct-card:hover,
+.ct-grid-posts .ct-card:hover {
+    box-shadow: var(--pan-shadow-strong);
+}
+
+.ct-post-card .entry-thumbnail img,
+.ct-related-posts .ct-card .entry-thumbnail img,
+.ct-grid-posts .ct-card .entry-thumbnail img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.ct-post-card .entry-meta,
+.ct-related-posts .ct-card .entry-meta,
+.ct-grid-posts .ct-card .entry-meta {
+    display: flex;
+    gap: var(--pan-space-2);
+    flex-wrap: wrap;
+    color: rgba(46, 50, 67, 0.7);
+    font-size: 0.875rem;
+}
+
+.ct-post-card .read-more a,
+.ct-related-posts .ct-card .read-more a,
+.ct-grid-posts .ct-card .read-more a {
+    color: var(--pan-color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.ct-post-card .read-more a:hover,
+.ct-related-posts .ct-card .read-more a:hover,
+.ct-grid-posts .ct-card .read-more a:hover {
+    color: var(--pan-color-primary-hover);
+    text-decoration: underline;
+}
