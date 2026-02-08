@@ -51,6 +51,10 @@ composer wp plugin activate stackable-ultimate-gutenberg-blocks
    ```bash
    composer wp panagea-core blocksy-defaults -- --force
    ```
+6. Pages should now show Panagea corporate colors, fonts and styles.
+   Check that aldo dynamic blocks and patterns created by Panagea Design system plugin are now available.
+   
+   From the editor inserter: open any page/post; click the + inserter; in the Blocks tab search “Panagea” (or the block names). Custom blocks appear alongside core blocks.
 
 Notes:
 - Versions follow git tags (`v1.0.0`, `v1.1.0`, ...). Tag releases in this repo so Composer can resolve versions.
