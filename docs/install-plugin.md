@@ -29,7 +29,7 @@ composer wp plugin activate stackable-ultimate-gutenberg-blocks
    ```json
    {
      "repositories": [
-       { "type": "vcs", "url": "https://github.com/panagea-net/panagea-wp-design-system" }
+       { "name": "panagea-core", "type": "vcs", "url": "https://github.com/panagea-net/panagea-wp-design-system" }
      ]
    }
    ```
@@ -37,13 +37,19 @@ composer wp plugin activate stackable-ultimate-gutenberg-blocks
    - If the repo is private, set auth first: `composer config --global github-oauth.github.com <token>` or export `COMPOSER_AUTH`.
 3. Require the plugin:
    ```bash
-   composer require panagea-net/panagea-core:^0.1
+   composer require panagea-net/panagea-wp-design-system:^0.1
    ```
-   To track the branch tip instead of a tag, use: `composer require panagea-net/panagea-core:dev-panagea-core`
+   To track the branch tip instead of a tag, use: `composer require panagea-net/panagea-wp-design-system:dev-panagea-core`
    (Composer prepends `dev-` to branch names when you want the moving branch tip; `dev-panagea-core` maps to branch `panagea-core`.)
 4. Activate the plugin in WordPress (WP Admin > Plugins) or via WP-CLI:
    ```bash
-   wp plugin activate panagea-core
+   composer wp plugin activate panagea-wp-design-system
+   ```
+5. Activation will register a new set of commands for wp-cli (see [utils](utils.md)).
+   
+   Ensure Panagea Design system variables are applyed to your Blocky theme:
+   ```bash
+   composer wp panagea-core blocksy-defaults -- --force
    ```
 
 Notes:
