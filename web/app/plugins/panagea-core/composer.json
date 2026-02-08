@@ -1,0 +1,26 @@
+{
+  "name": "panagea-net/panagea-core",
+  "description": "Panagea core functionality plugin: shared design system blocks, styles, patterns, and CLI helpers.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/panagea-net/panagea-wp-design-system",
+  "authors": [
+    {
+      "name": "Fabio Sanvido",
+      "email": "nando.sanvido@gmail.com",
+      "homepage": "https://github.com/NandoSan"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "panagea",
+    "design-system"
+  ],
+  "require": {
+    "php": ">=8.1",
+    "composer/installers": "^2.2"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
