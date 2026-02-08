@@ -15,7 +15,7 @@ function panagea_seed_reusable_blocks() {
     // List reusable blocks to seed. Add more entries as needed.
     $blocks = array(
         'pillars' => array(
-            'version'   => '1.0.7',
+            'version'   => '0.1.0',
             'base_slug' => 'pillars', // final slug => panagea-{$base_slug}-{$locale}
             'categories'=> array( 'panagea-general' ),
             'titles'    => array(
