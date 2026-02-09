@@ -1,10 +1,10 @@
 # Panagea Design System on Wordpress
 Implementation of Panagea designs as a plugin for wordpress.
 
-See a summary explanation fo the approach taken by this plugin in order to implement reusable blocks across multiple corporate WP instances in the [approaches](./docs/components.md)
+See a summary explanation fo the approach taken by this plugin in order to implement reusable blocks across multiple corporate WP instances in the [approaches](./docs/components-approach.md)
 
 ## Develop new components / blocks
-A more or less detailed guide on how to implement new blocks: [how-to](./docs/components-how-to.md)
+A more or less detailed guide on how to implement new blocks: [how-to](./docs/components-howto.md)
 
 In order for consumer Wordpress instances to install update your new components, plugin must be [published](./docs/publish.md)
 
