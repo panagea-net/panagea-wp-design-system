@@ -48,7 +48,7 @@ function panagea_seed_reusable_blocks() {
             ),
         ),
         'public-home-page' => array(
-            'version'   => '0.1.0',
+            'version'   => '0.1.1',
             'base_slug' => 'public-home-page', // final slug => panagea-{$base_slug}-{$locale}
             'categories'=> array( 'panagea-public-site' ),
             'titles'    => array(
