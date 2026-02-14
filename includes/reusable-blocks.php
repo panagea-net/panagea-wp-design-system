@@ -2,6 +2,24 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
+ * Register categories and seed reusable blocks for the Panagea Public Site.
+ *
+ * This allows us to manage design updates for public-facing pages via the plugin,
+ * while keeping them editable in the WordPress admin. Reusable blocks are used
+ * instead of patterns to allow for easier editing by non-technical users.
+ *
+ * Each block is seeded with locale-specific content, and the slug encodes the locale
+ * for easy retrieval. Versioning is implemented to allow for future updates to block
+ * content as the design evolves.
+ */
+function panagea_register_categories_for_reusable_blocks() {
+    register_block_pattern_category(
+        'panagea-public-site',
+        array( 'label' => __( 'Panagea Public Site', 'panagea-core' ) )
+    );
+}
+
+/**
  * Seed locale-specific reusable blocks so design updates propagate from the plugin.
  *
  * Structure is flexible so new reusable blocks can be added by declaring another
@@ -27,6 +45,21 @@ function panagea_seed_reusable_blocks() {
                 'en_US' => 'assets/reusable-blocks/pillars-section/pillars-section-en.html',
                 'es_ES' => 'assets/reusable-blocks/pillars-section/pillars-section-es.html',
                 'it_IT' => 'assets/reusable-blocks/pillars-section/pillars-section-it.html',
+            ),
+        ),
+        'public-home-page' => array(
+            'version'   => '0.1.0',
+            'base_slug' => 'public-home-page', // final slug => panagea-{$base_slug}-{$locale}
+            'categories'=> array( 'panagea-public-site' ),
+            'titles'    => array(
+                'en_US' => __( 'Public Home Page (EN)', 'panagea-core' ),
+                'es_ES' => __( 'Página de Inicio Pública (ES)', 'panagea-core' ),
+                'it_IT' => __( 'Pagina Principale Pubblica (IT)', 'panagea-core' ),
+            ),
+            'files'     => array(
+                'en_US' => 'assets/reusable-blocks/public-home-page/public-home-page-en.html',
+                'es_ES' => 'assets/reusable-blocks/public-home-page/public-home-page-es.html',
+                'it_IT' => 'assets/reusable-blocks/public-home-page/public-home-page-it.html',
             ),
         ),
     );
@@ -67,6 +100,7 @@ function panagea_seed_reusable_blocks() {
         update_option( $option_key, $version );
     }
 }
+add_action( 'init', 'panagea_register_categories_for_reusable_blocks', 10 );
 add_action( 'init', 'panagea_seed_reusable_blocks', 20 );
 
 /**
